@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Welcome to User List</h1>
+    <ul>
+        <% for (let i = 0; i < usuarioRes.length; i++){%>
+                <li><%=usuarioRes[i].nombre%></li>
+            <%}%>
+    </ul>
+  </body>
+</html>

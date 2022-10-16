@@ -27,11 +27,14 @@ module.exports = function(sequelize, dataTypes){
 
     Ciudad.associate = function(models){
         Ciudad.hasMany(models.Usuario,{
+            as: "usuarios",
             foreignKey:"ciudad_id"
             })
 
+    //Hay que recordar que los associate siempre deben llevar un Alias
     Ciudad.associate= function(models){
         Ciudad.belongsTo(models.Continente,{
+            as:"continente",
             foreignKey:"continente_id"
         })
     }
