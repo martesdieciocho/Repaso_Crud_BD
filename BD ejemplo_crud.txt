@@ -1,0 +1,39 @@
+//Creación BD
+CREATE DATABASE ejemplo_CRUD
+
+//Creación tabla
+create table usuario (id int primary key auto_increment,
+ nombre varchar(50),
+ apellido varchar(50),
+ cedula int, ciudad_id int,
+ telefono int,
+correo varchar(50));
+
+//Creación tabla
+create table ciudad (id int primary key auto_increment,
+ nombre varchar(50),
+ poblacion int,
+ continente_id varchar(50));
+
+//Creación tabla
+create table continente (id int primary key auto_increment,
+ nombre varchar(50));
+
+//agregar relaciones mediante creación de llave foranea.
+ALTER TABLE usuario 
+ADD CONSTRAINT ciudad_id 
+FOREIGN KEY (ciudad_id) 
+REFERENCES ciudad (id);
+
+
+ALTER TABLE ciudad 
+ADD CONSTRAINT continente_id
+FOREIGN KEY (continente_id) 
+REFERENCES continente (id);
+
+//Agregando datos a la BD
+insert into ciudad (id, nombre, poblacion, continente_id) values(1,"Medellín", 5000000, 1)
+
+insert into continente (id, nombre, apellido, cedula, ciudad_id, telefono, correo) values(1,"Mateo","García", 5000001, 1, 123456,"mateo@garcia.com")
+
+insert into continente (id, nombre) values(1,"America Latina")
