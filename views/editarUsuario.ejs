@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Welcome to edit an user</h1>
+        <section>
+            <form action="/usuarios/actualizar/<%= usuario.id %> ?_method=PUT" method="post">
+                <label for="nombre">Nombre:<input name ="nombre" type="text" value="<%=usuario.nombre %>"></label><br><br>
+                <label for="apellido">Apellido:<input name ="apellido" type="text" value="<%=usuario.apellido %>"></label><br><br>
+                <label for="cedula">Cedula:<input name ="cedula" type="number" value="<%=usuario.cedula %>"></label><br><br>
+                <label for="ciudad_id">Ciudad_id:<input name ="ciudad_id" type="number" value="<%=usuario.ciudad_id %>"></label><br><br>
+                <label for="telefono">Telefono:<input name ="telefono" type="number" value="<%=usuario.telefono %>"></label><br><br>
+                <label for="correo">Correo:<input name ="correo" type="text" value="<%=usuario.correo %>"></label>
+                <p><button type="submit">Editar</button></p>
+            </form>
+
+        </section>
+  </body>
+</html>
